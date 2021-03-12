@@ -1,0 +1,86 @@
+.list-wrapper {
+    display: flex;
+    justify-content: center;
+    table{
+        thead {
+            tr {
+                th {
+                    padding: 20px;
+                    border-bottom: 2px solid rgb(192, 192, 192);
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    padding: 20px;
+                    button {
+                        padding: 3px 10px;
+                        margin: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+
+.showEdit {
+    top: 20%;
+    left: 75%;
+    background-color: white;
+    position: absolute;
+    border: 2px solid grey;
+    input {
+        padding: 10px;
+        margin-left: 10px;
+        cursor: pointer;
+
+    }
+    label {
+        padding: 10px;
+        cursor: pointer;
+    }
+    button {
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        background-color: blue;
+        color: white;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+
+    }
+}
+
+.editBtn {
+    color: white;
+    background-color: blue;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.deleteBtn {
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.upDownBtn {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}

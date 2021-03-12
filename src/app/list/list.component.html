@@ -1,0 +1,52 @@
+<div class="list-wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Assignee</th>
+                <th>Status <button class="upDownBtn">
+                     <p (click)="sortStatusUp()" *ngIf="this.sort; else elseButton">&#9660;</p>
+
+                     <ng-template #elseButton>
+                         <p (click)="sortStatusDown()">&#9650;</p>
+                     </ng-template>
+                     </button> </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <div class="showEdit" *ngIf="showEdit">
+            <input (change)="eventCheck($event)" id="checkbox" type="checkbox">
+            <label for="checkbox">List item {{numberEdit}}  Completed</label>
+            <button (click)="changeStatus(numberEdit)">Save</button>
+        </div>
+        <tbody>
+            <tr *ngFor= "let todo of todos | paginate: {itemsPerPage:10,currentPage:p};">
+                <td>
+                    {{todo.id}}
+                </td>
+                <td>
+                    {{todo.title}}
+                </td>
+                <td>
+                    <p> {{users[todo.userId-1].name}}</p>
+                </td>
+                <td>
+                    <p *ngIf="todo.completed; else elseBlock" >Done</p>
+                    <ng-template #elseBlock>
+                    <p>In Progress</p>
+                    </ng-template>
+                </td>
+                <td>
+                    <button class="editBtn" (click)="editTodo(todo)" >Edit</button>
+                    <button class="deleteBtn" (click)="deleteTodo(todo.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
+
+<div class="pagination-wrapper">
+    <pagination-controls (pageChange) = "p = $event"></pagination-controls>
+</div>
